@@ -42,12 +42,12 @@ def get_char_count_string(sorted_char_counts):
 
 
 def get_report(*args):
-    num_words, char_counts = args
+    num_words, char_counts, book_name = args
     output = ""
     sorted_char_counts = get_sorted_char_counts(char_counts)
     char_count_string = get_char_count_string(sorted_char_counts)
     output = output + "============ BOOKBOT ============"
-    output = output + f"\nAnalyzing book found at books/frankenstein.txt..."
+    output = output + f"\nAnalyzing book found at {book_name}..."
     output = output + f"\n----------- Word Count ----------"
     output = output + f"\nFound {num_words} total words"
     output = output + f"\n--------- Character Count -------"

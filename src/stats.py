@@ -1,15 +1,14 @@
-def get_book_text(file_path):
+def get_book_text(file_path: str) -> str:
     with open(file_path) as f:
         return f.read()
 
 
-def get_num_words(file_contents):
+def get_num_words(file_contents: str) -> int:
     return len(file_contents.split())
 
 
-def get_char_counts(file_contents):
-    char_counts = {}
-
+def get_char_counts(file_contents: str) -> dict[str, int]:
+    char_counts: dict[str, int] = {}
     for char in file_contents:
         c = char.lower()
         if c not in char_counts:
@@ -22,7 +21,7 @@ def sort_on(char):
     return char["num"]
 
 
-def get_sorted_char_counts(char_counts):
+def get_sorted_char_counts(char_counts: dict[str, int]):
     chars = []
     for c, count in char_counts.items():
         if c.isalpha():
@@ -41,7 +40,7 @@ def get_char_count_string(sorted_char_counts):
     return char_count_str
 
 
-def get_report(*args):
+def get_report(*args: tuple[int, str, str]):
     num_words, char_counts, book_name = args
     output = ""
     sorted_char_counts = get_sorted_char_counts(char_counts)
